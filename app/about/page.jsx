@@ -16,7 +16,9 @@ const WritesPage = () => {
   const toggleDarkMode = () => {
     const newDarkMode = !dark;
     setDark(newDarkMode);
-    typeof window !== 'undefined' && localStorage.setItem('darkMode', JSON.stringify(newDarkMode));
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('darkMode', JSON.stringify(newDarkMode))
+    }
   };
   // Define props to pass to SpesificThoughts component
   return (
