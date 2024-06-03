@@ -4,7 +4,7 @@
 
 @layer base{
     *{
-        @apply dark:bg-[#001a2c] bg-gray-100
+        @apply dark:bg-[#001a2c] bg-slate-200
     }
 }
 * {

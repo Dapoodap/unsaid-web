@@ -1,40 +1,12 @@
 "use client"
 import { Navbar } from '@/app/components/Navbar';
-import React, { useState } from 'react';
-import { CiLight } from 'react-icons/ci';
-import { FaRegMoon } from 'react-icons/fa';
 import { AboutMe } from '../components/AboutMe';
 import { Footer } from '../components/Footer';
 
 
 const WritesPage = () => {
-
-  const [dark, setDark] = useState(() => {
-    const savedDarkMode = localStorage.getItem('darkMode');
-    return savedDarkMode ? JSON.parse(savedDarkMode) : false;
-  });
-  const toggleDarkMode = () => {
-    const newDarkMode = !dark;
-    setDark(newDarkMode);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('darkMode', JSON.stringify(newDarkMode))
-    }
-  };
-  // Define props to pass to SpesificThoughts component
   return (
-    <div className={`${dark && 'dark'}`}>
-      <div
-        className={`fixed z-10 p-3 bottom-5 rounded-xl w-fit right-5 ${
-          dark ? 'bg-gray-600' : 'bg-gray-200'
-        } cursor-pointer`}
-        onClick={toggleDarkMode}
-      >
-        {dark ? (
-          <CiLight className="text-2xl font-extrabold text-yellow-300 bg-transparent" />
-        ) : (
-          <FaRegMoon className="text-2xl font-extrabold text-gray-800 bg-transparent" />
-        )}
-      </div>
+    <div>
       <Navbar />
       <AboutMe/>
       <Footer/>
