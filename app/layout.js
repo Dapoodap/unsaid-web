@@ -1,6 +1,7 @@
 import { Playfair_Display} from "next/font/google";
 import "./globals.css";
 import Provider from "./components/Provider";
+import DarkModeContextProvider from "@/context/DarkMode";
 
 const playfair = Playfair_Display({ subsets: ["latin"] });
 
@@ -14,7 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={playfair.className}>
         <Provider>
-          {children}
+          <DarkModeContextProvider>
+            {children}
+          </DarkModeContextProvider>
         </Provider>
       </body>
     </html>
