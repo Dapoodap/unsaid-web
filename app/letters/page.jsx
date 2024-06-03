@@ -7,7 +7,7 @@ import { FaRegMoon } from 'react-icons/fa';
 import { FormLetter } from '../components/FormLetter';
 import { AllLetters } from '../components/AllLetters';
 
-const WritesPage = () => {
+const LettersPage = () => {
 
   const [dark, setDark] = useState(() => {
     const savedDarkMode = localStorage.getItem('darkMode');
@@ -39,4 +39,4 @@ const WritesPage = () => {
   );
 };
 
-export default WritesPage;
+export default LettersPage;
